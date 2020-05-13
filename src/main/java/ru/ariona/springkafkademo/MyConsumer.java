@@ -14,11 +14,9 @@ import java.util.Properties;
 import java.util.function.Consumer;
 
 public class MyConsumer implements Closeable {
-    private final String topic;
     private final KafkaConsumer<String, String> consumer;
 
     public MyConsumer(String topic) {
-        this.topic = topic;
         Properties properties = new Properties();
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "groupId");
